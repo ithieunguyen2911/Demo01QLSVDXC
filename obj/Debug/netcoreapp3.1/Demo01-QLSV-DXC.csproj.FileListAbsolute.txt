@@ -1,0 +1,13 @@
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\bin\Debug\netcoreapp3.1\Demo01-QLSV-DXC.exe
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\bin\Debug\netcoreapp3.1\Demo01-QLSV-DXC.deps.json
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\bin\Debug\netcoreapp3.1\Demo01-QLSV-DXC.runtimeconfig.json
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\bin\Debug\netcoreapp3.1\Demo01-QLSV-DXC.runtimeconfig.dev.json
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\bin\Debug\netcoreapp3.1\Demo01-QLSV-DXC.dll
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\bin\Debug\netcoreapp3.1\Demo01-QLSV-DXC.pdb
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\obj\Debug\netcoreapp3.1\Demo01-QLSV-DXC.csprojAssemblyReference.cache
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\obj\Debug\netcoreapp3.1\Demo01-QLSV-DXC.AssemblyInfoInputs.cache
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\obj\Debug\netcoreapp3.1\Demo01-QLSV-DXC.AssemblyInfo.cs
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\obj\Debug\netcoreapp3.1\Demo01-QLSV-DXC.csproj.CoreCompileInputs.cache
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\obj\Debug\netcoreapp3.1\Demo01-QLSV-DXC.dll
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\obj\Debug\netcoreapp3.1\Demo01-QLSV-DXC.pdb
+F:\Project Demo DXC\Demo01-QLSV-C#\Demo01-QLSV-DXC\obj\Debug\netcoreapp3.1\Demo01-QLSV-DXC.genruntimeconfig.cache

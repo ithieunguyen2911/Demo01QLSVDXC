@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Demo01-QLSV-DXC/1.0.0": {
+        "runtime": {
+          "Demo01-QLSV-DXC.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Demo01-QLSV-DXC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -8,7 +8,7 @@ namespace Demo01_QLSV_DXC
     {
         //Declare Variable
         private string fullName;
-        private DateTime dateOfBirth;
+        private string dateOfBirth;
         private bool gender;
         private string address;
 
@@ -17,7 +17,7 @@ namespace Demo01_QLSV_DXC
         {
 
         }
-        public Person(string FullName, DateTime DateOfBirth, bool Gender, string Address)
+        public Person(string FullName, string DateOfBirth, bool Gender, string Address)
         {
             this.FullName = FullName;
             this.DateOfBirth = DateOfBirth;
@@ -27,14 +27,14 @@ namespace Demo01_QLSV_DXC
 
         //Getter & Setter
         public string FullName { get => fullName; set => fullName = value; }
-        public DateTime DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
+        public string DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
         public bool Gender { get => gender; set => gender = value; }
         public string Address { get => address; set => address = value; }
 
         //ToString() : purpose to print infomation.
         public override string ToString()
         {
-            return "Ho va Ten : " + FullName + "Ngay sinh : " + DateOfBirth + "Gioi tinh : " + Gender + "Dia Chi : " + Address;
+            return "Ho va Ten : " + FullName + " Ngay sinh : " + DateOfBirth + " Gioi tinh : " + Gender + " Dia Chi : " + Address;
         }
     }
 }
