@@ -10,10 +10,10 @@ namespace Demo01_QLSV_DXC
     {
          //ArrayList list = new ArrayList();
         private List<Student> studentList = new List<Student>() { 
-            new Student("SV01", "Nguyen Huu Hieu", "29/11/1994", true, "TpHCM", 9.5),
-            new Student("SV02", "Nguyen Huu Hoa", "26/10/1994", true, "Ha Noi", 7.5),
-            new Student("SV04", "Nguyen Thao Ngan", "02/02/1994", false, "Hai Phong", 8.0),
-            new Student("SV03", "Nguyen Bao An", "01/01/1994", false, "TpHCM", 4.5)
+            new Student("SV01", "Nguyen Huu Hieu", DateTimeIO.ConvertStringToDateTime("29/11/1994"), true, "TpHCM", 9.5),
+            new Student("SV02", "Nguyen Huu Hoa", DateTimeIO.ConvertStringToDateTime("26/10/1994"), true, "Ha Noi", 7.5),
+            new Student("SV04", "Nguyen Thao Ngan", DateTimeIO.ConvertStringToDateTime("02/02/1994"), false, "Hai Phong", 8.0),
+            new Student("SV03", "Nguyen Bao An",DateTimeIO.ConvertStringToDateTime("01/01/1994"), false, "TpHCM", 4.5)
         };
 
         public void Delete(string stdCode)
@@ -61,11 +61,11 @@ namespace Demo01_QLSV_DXC
         public void Update(string stdCode)
         {
             
-            var result = studentList.Where(std => std.StdCode == stdCode.ToUpper()).Single();
+            var result = studentList.Where(std => std.StdCode.Trim().ToUpper() == stdCode.Trim().ToUpper()).Single();
             result.ShowInfo();
             
             result.FullName = Console.ReadLine();
-            result.DateOfBirth = Console.ReadLine();
+            result.DateOfBirth = DateTimeIO.ConvertStringToDateTime(Console.ReadLine());
             result.Gender = bool.Parse(Console.ReadLine());
             result.Address = Console.ReadLine();
             result.StdGrades = double.Parse(Console.ReadLine());
@@ -137,7 +137,8 @@ namespace Demo01_QLSV_DXC
         //Sử dụng LinQ để tìm một đối tượng Student theo tên
         public void FindByFullName(string FullName)
         {
-            var result = studentList.Where(item => item.FullName == FullName).FirstOrDefault();
+
+            var result = studentList.Where(item => item.FullName.Trim().ToUpper() == FullName.Trim().ToUpper()).FirstOrDefault();
             result.ShowInfo();
         }
     }

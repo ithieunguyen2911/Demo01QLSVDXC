@@ -22,6 +22,7 @@ namespace Demo01_QLSV_DXC
             Console.WriteLine("\t 4. Xoa sinh vien");
             Console.WriteLine("\t 5. Sap xep danh sach sinh vien theo MASV");
             Console.WriteLine("\t 6. Tim kiem sinh vien theo MASV");
+            Console.WriteLine("\t 7. Tim kiem sinh vien theo Ho va Ten");
 
             Console.WriteLine("\t 9. Thoat khoi chuong trinh");
 

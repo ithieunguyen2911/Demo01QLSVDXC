@@ -16,7 +16,7 @@ namespace Demo01_QLSV_DXC
 
         }
 
-        public Student(string StdCode,string FullName, string DateOfBirth,bool Gender,string Address, double StdGrades) : base (FullName, DateOfBirth, Gender, Address)
+        public Student(string StdCode,string FullName, DateTime DateOfBirth,bool Gender,string Address, double StdGrades) : base (FullName, DateOfBirth, Gender, Address)
         {
             this.StdCode = StdCode;
             this.StdGrades = StdGrades;
@@ -35,7 +35,7 @@ namespace Demo01_QLSV_DXC
             FullName = Console.ReadLine();
             
             Console.WriteLine("Nhap ngay sinh:");
-            DateOfBirth = Console.ReadLine();
+            DateOfBirth = DateTimeIO.ConvertStringToDateTime(Console.ReadLine());
             
             Console.WriteLine("Nhap gioi tinh:");
             Gender = bool.Parse(Console.ReadLine());
