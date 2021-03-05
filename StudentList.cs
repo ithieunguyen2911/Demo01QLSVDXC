@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Demo01_QLSV_DXC
 {
-    public class StudentList:IStudent
+    public class StudentList:Student,IStudent
     {
          //ArrayList list = new ArrayList();
         private List<Student> studentList = new List<Student>() { 
@@ -64,11 +64,11 @@ namespace Demo01_QLSV_DXC
             var result = studentList.Where(std => std.StdCode.Trim().ToUpper() == stdCode.Trim().ToUpper()).Single();
             result.ShowInfo();
             
-            result.FullName = Console.ReadLine();
-            result.DateOfBirth = DateTimeIO.ConvertStringToDateTime(Console.ReadLine());
-            result.Gender = bool.Parse(Console.ReadLine());
-            result.Address = Console.ReadLine();
-            result.StdGrades = double.Parse(Console.ReadLine());
+            result.FullName = Input();
+            result.DateOfBirth = DateTimeIO.ConvertStringToDateTime(Input());
+            result.Gender = bool.Parse(Input().ToUpperInvariant() == "NAM" ? "true" : Input().ToUpperInvariant() == "NU" ? "false" : "Invalid");
+            result.Address = Input();
+            result.StdGrades = double.Parse(Input());
 
             //studentList.Add(result);
             Console.WriteLine("Cap nhat sinh vien thanh cong!");

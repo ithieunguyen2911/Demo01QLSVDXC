@@ -33,7 +33,7 @@ namespace Demo01_QLSV_DXC
         public string Address { get => address; set => address = value; }
         public DateTime DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
 
-        // Chuyển kiểu dữ liệu từ String sang DateTime
+       
         
 
         //Check Gender 
@@ -52,7 +52,7 @@ namespace Demo01_QLSV_DXC
         //Show Info
         public virtual void ShowInfo()
         {
-            Console.Write("Ho va Ten: {0} - Ngay sinh: {1} - Gioi Tinh: {2} - Dia Chi: {3}", fullName, DateTimeIO.ConvertDateTimeToString(DateOfBirth), CheckGender(), address);
+            Console.Write("Ho va Ten: {0} - Ngay sinh: {1} - Gioi Tinh: {2} - Dia Chi: {3}",  fullName, DateTimeIO.ConvertDateTimeToString(DateOfBirth), CheckGender(), address);
         }
     }
 }

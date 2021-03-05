@@ -28,23 +28,37 @@ namespace Demo01_QLSV_DXC
         //Nhập thông tin sinh viên
         public void EnterStudentInfo()
         {
-            Console.WriteLine("Nhap ma sinh vien:");
-            stdCode = Console.ReadLine();
-           
-            Console.WriteLine("Nhap ho va ten:");
-            FullName = Console.ReadLine();
-            
-            Console.WriteLine("Nhap ngay sinh:");
-            DateOfBirth = DateTimeIO.ConvertStringToDateTime(Console.ReadLine());
-            
-            Console.WriteLine("Nhap gioi tinh:");
-            Gender = bool.Parse(Console.ReadLine());
-            
-            Console.WriteLine("Nhap dia chi:");
-            Address = Console.ReadLine();
+            try
+            {
+                Console.WriteLine("Nhap ma sinh vien:");
+                stdCode = Input().ToUpper();
 
-            Console.WriteLine("Nhap diem:");
-            stdGrades = double.Parse(Console.ReadLine());
+                Console.WriteLine("Nhap ho va ten:");
+                FullName = Input();
+
+
+                Console.WriteLine("Nhap ngay sinh:");
+                DateOfBirth = DateTimeIO.ConvertStringToDateTime(Input());
+
+                Console.WriteLine("Nhap gioi tinh:");
+                //Gender = bool.Parse(Input());
+                //Sử dụng toán tử điều kiện để gán giá trị true | false cho Gender có kiểu dữ liệu boolean.
+                Gender = bool.Parse(Input().ToUpperInvariant() == "NAM" ? "true" : Input().ToUpperInvariant() == "NU" ? "false" : "Invalid");
+
+                Console.WriteLine("Nhap dia chi:");
+                Address = Input();
+
+                Console.WriteLine("Nhap diem:");
+                double Grades = double.Parse(Console.ReadLine());
+                stdGrades = checkGrades(Grades);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Loi :" + ex.Message);
+            }
+            
+            
+
         }
 
         //Xuất thông tin của sinh viên đó
@@ -53,6 +67,31 @@ namespace Demo01_QLSV_DXC
             Console.Write("Ma sinh vien: {0} - ", stdCode);
             base.ShowInfo();
             Console.WriteLine(" - Diem: {0} ", stdGrades);
+        }
+
+        public string Input()
+        {
+            string s = Console.ReadLine().Trim();
+            if (s == "")
+                throw new Exception("Gia tri nhap vao khong duoc de trong");
+
+            return s;
+        }
+
+        public double checkGrades(double Grades)
+        { 
+            do
+            {
+                if (Grades > 10 || Grades < 0)
+                {
+                    Console.WriteLine("Gia tri nhap vao : diem >= 0 và diem <= 10 ");
+                    Grades = double.Parse(Console.ReadLine());
+                }
+                else
+                {
+                    return Grades;
+                }
+            } while (true);
         }
     }
 }

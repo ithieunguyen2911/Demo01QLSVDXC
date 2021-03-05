@@ -32,7 +32,7 @@ namespace Demo01_QLSV_DXC
             do
             {
                 Console.WriteLine("Nhap vao chuc nang ban muon:");
-                string choice = Console.ReadLine();
+                string choice = Console.ReadLine().Trim();
 
                 if (choice == "1")
                 {
@@ -69,7 +69,7 @@ namespace Demo01_QLSV_DXC
                     if(choice == "9")
                     {
                         Console.WriteLine("Ban co chac muon thoat khoi chuong trinh khong? (y/n)");
-                        string addNew = Console.ReadLine();
+                        string addNew = Console.ReadLine().Trim();
                         if (addNew.Equals("y", StringComparison.OrdinalIgnoreCase))
                         {
                             //checkMenu = false;
