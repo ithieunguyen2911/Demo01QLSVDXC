@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Collections;
+using System.Linq;
 
 namespace Demo01_QLSV_DXC
 {
@@ -57,9 +58,21 @@ namespace Demo01_QLSV_DXC
             } while (true);
         }
 
-        public void Update()
+        public void Update(string stdCode)
         {
-            throw new NotImplementedException();
+            
+            var result = studentList.Where(std => std.StdCode == stdCode.ToUpper()).Single();
+            result.ShowInfo();
+            
+            result.FullName = Console.ReadLine();
+            result.DateOfBirth = Console.ReadLine();
+            result.Gender = bool.Parse(Console.ReadLine());
+            result.Address = Console.ReadLine();
+            result.StdGrades = double.Parse(Console.ReadLine());
+
+            //studentList.Add(result);
+            Console.WriteLine("Cap nhat sinh vien thanh cong!");
+            SelectAll();
         }
 
         public void SelectOne(string stdCode)
@@ -83,6 +96,7 @@ namespace Demo01_QLSV_DXC
             }
         }
 
+
         public void SelectAll()
         {
             foreach (Student st in studentList)
@@ -95,6 +109,9 @@ namespace Demo01_QLSV_DXC
             //studentList.ForEach(item => item.ShowInfo());
         }
 
+        //Điểm khác biệt là StudentComparer không truyền đối tượng Student vào Generic 
+        //public class StudentComparer : IComparer
+        //Chỉ sắp xếp theo một tiêu chí
         public void SelectAllSortByCode()
         {
             //studentList.Sort();
@@ -107,6 +124,21 @@ namespace Demo01_QLSV_DXC
             {
                 item.ShowInfo();
             }
+        }
+
+        //Điểm khác biệt là StudentComparer không truyền đối tượng Student vào Generic 
+        //public class StudentComparerMultiple : IComparer<Student>
+        //Sắp xếp theo nhiều tieu chí khác nhau.
+        public void SortMultiple()
+        {
+            studentList.Sort(new StudentComparerMultiple());
+        }
+
+        //Sử dụng LinQ để tìm một đối tượng Student theo tên
+        public void FindByFullName(string FullName)
+        {
+            var result = studentList.Where(item => item.FullName == FullName).FirstOrDefault();
+            result.ShowInfo();
         }
     }
 }

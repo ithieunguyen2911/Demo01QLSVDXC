@@ -41,7 +41,9 @@ namespace Demo01_QLSV_DXC
                     std.Insert();
                 }else if(choice == "3")
                 {
-                    std.Update();
+                    Console.WriteLine("Nhap vao ma sinh vien ban muon sua:");
+                    string code = Console.ReadLine();
+                    std.Update(code);
                 }else if(choice == "4")
                 {
                     Console.WriteLine("Nhap vao ma sinh vien ban muon xoa:");
@@ -55,6 +57,11 @@ namespace Demo01_QLSV_DXC
                     Console.WriteLine("Nhap vao ma sinh vien ban muon tim kiem:");
                     string code = Console.ReadLine();
                     std.SelectOne(code);
+                }else if(choice == "7")
+                {
+                    Console.WriteLine("Nhap vao tên sinh vien ban muon tim kiem:");
+                    string name = Console.ReadLine();
+                    std.FindByFullName(name);
                 }
                 else
                 {
@@ -73,81 +80,9 @@ namespace Demo01_QLSV_DXC
                
             } while (true);
 
-          
-            //std.SelectAllSortByCode();
-            //std.Delete("SV03"); //Ở đây ta sẽ viết lệnh cho người dùng nhập vào mã
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //Todo: In thông tin đối tượng
-            /*Console.WriteLine("Thong Tin Cua Sinh Vien Khi Chua Sap Xep La : ");
-            foreach (Person p in personList)
-            {
-                Console.WriteLine(p.ToString());
-
-            }*/
-
-            //Todo: Sắp xếp theo Sort() có sẵn nó chỉ sắp xếp theo những đối tượng đơn giản có 1 thuộc tính,
-
-
-            //Todo: Sắp xếp theo Sort(IComparer comparer) tự định nghĩa.
-            /*Console.WriteLine("Thong Tin Cua Sinh Vien Sau Khi Sap Xep La : ");
-            personList.Sort(new SortFullName());
-            foreach (Person p in personList)
-            {
-                Console.WriteLine(p.ToString());
-
-            }*/
-
         }
         
       
-       /* public class SortFullName : IComparer
-        {
-            public int Compare(object x, object y)
-            {
-                Person p1 = x as Person;
-                Person p2 = (Person) y ;
 
-                if(p1 ==  null || p2 == null)
-                {
-                    throw new InvalidOperationException();
-                }
-                else
-                {   
-                    
-                    return String.Compare(p1.FullName, p2.FullName);
-                }
-            }
-        }*/
     }
 }

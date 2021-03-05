@@ -8,7 +8,7 @@ namespace Demo01_QLSV_DXC
     {
         
         void Insert();
-        void Update();
+        void Update(string stdCode);
         void Delete(string stdCode);
         void SelectAll();
 

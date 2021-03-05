@@ -8,7 +8,7 @@ namespace Demo01_QLSV_DXC
     {
         //Declare Variable
         private string fullName;
-        private string dateOfBirth;
+        private DateTime dateOfBirth;
         private bool gender;
         private string address;
 
@@ -17,7 +17,7 @@ namespace Demo01_QLSV_DXC
         {
 
         }
-        public Person(string FullName, string DateOfBirth, bool Gender, string Address)
+        public Person(string FullName, DateTime DateOfBirth, bool Gender, string Address)
         {
             fullName = FullName;
             dateOfBirth = DateOfBirth;
@@ -27,31 +27,32 @@ namespace Demo01_QLSV_DXC
 
         //Getter & Setter
         public string FullName { get => fullName; set => fullName = value; }
-        public string DateOfBirth { get => dateOfBirth; set => dateOfBirth = value; }
+        public string DateOfBirth { get => ConvertDateTimeToString(dateOfBirth); set => dateOfBirth = ConvertStringToDateTime(value); }
         public bool Gender { get => gender; set => gender = value; }
         public string Address { get => address; set => address = value; }
 
-        //FillInfo() : purpose to enter person information
-        /* public void FillInfo()
-         {
-             Console.WriteLine("----------------------------------------------------------------------------");
-             Console.Write("Ho Ten : ");
-             fullName = Console.ReadLine();
-             Console.Write("Ngay Sinh : ");
-             dateOfBirth = Console.ReadLine();
-             Console.Write("Gioi Tinh : ");
-             gender = bool.Parse(Console.ReadLine());
-             Console.Write("Dia Chi : ");
-             address = Console.ReadLine();
-
-             Console.WriteLine("----------------------------------------------------------------------------");
-         }*/
-
-        //ToString() : purpose to print infomation.
-        /*public override string ToString()
+        // Chuyển kiểu dữ liệu từ String sang DateTime
+        public DateTime ConvertStringToDateTime(string date)
         {
-            return "Ho va Ten : " + FullName + " Ngay sinh : " + DateOfBirth + " Gioi tinh : " + Gender + " Dia Chi : " + Address;
-        } */
+            string[] arrayDate = date.Split("/");
+            int year = int.Parse(arrayDate[2]);
+            int month = int.Parse(arrayDate[1]);
+            int day = int.Parse(arrayDate[0]);
+
+            DateTime ResultDate = new DateTime(year, month, day);
+            return ResultDate;
+        }
+
+        // Chuyển kiểu dữ liệu từ DateTime sang String
+        public string ConvertDateTimeToString(DateTime date)
+        {
+            int day = date.Day;
+            int month = date.Month;
+            int year = date.Year;
+
+            string result = day.ToString() + "/" + month.ToString() + "/" + year.ToString();
+            return result;
+        }
 
         //Check Gender 
         public string CheckGender()

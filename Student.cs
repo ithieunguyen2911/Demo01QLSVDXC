@@ -9,6 +9,8 @@ namespace Demo01_QLSV_DXC
         private string stdCode;
         private double stdGrades;
 
+        
+
         public Student() 
         {
 
@@ -19,7 +21,7 @@ namespace Demo01_QLSV_DXC
             this.StdCode = StdCode;
             this.StdGrades = StdGrades;
         }
-
+        //Getter & Setter
         public double StdGrades { get => stdGrades; set => stdGrades = value; }
         public string StdCode { get => stdCode; set => stdCode = value; }
         
